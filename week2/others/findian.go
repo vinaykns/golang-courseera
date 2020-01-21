@@ -13,6 +13,7 @@ var (
 	test = flag.Bool("test", false, "go run -test")
 )
 
+
 func main() {
 	flag.Parse()
 
@@ -27,12 +28,16 @@ func main() {
 	}
 
 	str := strings.ToLower(*input)
-	if strings.HasPrefix(str, "i") && strings.Contains(str, "a") && strings.HasSuffix(str, "n") {
-		fmt.Printf("%s Found!\n", str)
-	} else {
-		fmt.Printf("%s Not Found!\n", str)
-	}
+	fmt.Println(findian(str))
+}
 
+// findian finds if input str starts with prefix i, ends with suffix n and has a character a in the middle
+func findian(str string) (result string) {
+	if strings.HasPrefix(str, "i") && strings.Contains(str, "a") && strings.HasSuffix(str, "n") {
+		return "Found!"
+	} else {
+		return "Not Found!"
+	}
 }
 
 func testInputs() {
@@ -44,13 +49,17 @@ N`, `i
 a
 N`,"iaaaan", "ihhhhhn", "ina", "xian"}
 
-	for _, each := range inputs {
-		str := strings.ToLower(each)
-		if strings.HasPrefix(str, "i") && strings.Contains(str, "a") && strings.HasSuffix(str, "n") {
-			fmt.Printf("%s Found!\n", each)
-		} else {
-			fmt.Printf("%s Not Found!\n", each)
+	// outputs contains the results of the corresponding input strings.
+	outputs := []string{"Not Found!", "Found!", "Found!", "Found!", "Found!", "Not Found!",
+		"Found!", "Found!", "Not Found!", "Not Found!", "Not Found!"}
+
+	var result string
+	for i, each := range inputs {
+		result = findian(strings.ToLower(each))
+		if outputs[i] != result {
+			fmt.Println("tests not passed.")
+			return
 		}
-		fmt.Println("------------------------------")
 	}
+	fmt.Println("tests passed.")
 }
