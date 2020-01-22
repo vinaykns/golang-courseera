@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 	"strings"
@@ -8,8 +9,9 @@ import (
 
 func main() {
 	fmt.Println("Enter the string")
-	var data string
-	_,err := fmt.Scanf("%s", &data)
+	reader := bufio.NewReader(os.Stdin)
+	input, _, err := reader.ReadLine()
+	data := string(input)
 	if err != nil {
 		os.Exit(1)
 	}
