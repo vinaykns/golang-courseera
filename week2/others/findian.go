@@ -5,14 +5,12 @@ import (
 	"fmt"
 	"os"
 	"strings"
-
 )
 
 var (
-	input  = flag.String("input", "empty", ".go run -input ian")
-	test = flag.Bool("test", false, "go run -test")
+	input = flag.String("input", "empty", ".go run -input ian")
+	test  = flag.Bool("test", false, "go run -test")
 )
-
 
 func main() {
 	flag.Parse()
@@ -47,7 +45,7 @@ a
 efju
 N`, `i
 a
-N`,"iaaaan", "ihhhhhn", "ina", "xian"}
+N`, "iaaaan", "ihhhhhn", "ina", "xian"}
 
 	// outputs contains the results of the corresponding input strings.
 	outputs := []string{"Not Found!", "Found!", "Found!", "Found!", "Found!", "Not Found!",

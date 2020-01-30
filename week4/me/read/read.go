@@ -11,9 +11,8 @@ import (
 // Name struct stores the first and last name of a persion
 type Name struct {
 	firstName string
-	lastName string
+	lastName  string
 }
-
 
 // this is how one can have multiple comments in golang.
 /*
@@ -23,7 +22,7 @@ var names = []Name{
 		lastName:  "kumar",
 	},
 }
- */
+*/
 
 func addDataToSlice(input *[]Name, data Name) {
 	*input = append(*input, data)
@@ -40,7 +39,7 @@ func getDataFromFile(name string) (result []Name, err error) {
 		names := strings.Split(each, " ")
 		firstName := names[0]
 		lastName := names[1]
-		data := Name{firstName: firstName, lastName:lastName}
+		data := Name{firstName: firstName, lastName: lastName}
 		addDataToSlice(&result, data)
 	}
 	return result, nil

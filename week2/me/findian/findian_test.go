@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"testing"
 	"strings"
+	"testing"
 )
 
 var (

@@ -41,7 +41,7 @@ func takeInput() (name, address string, err error) {
 }
 
 // this will return a json object for the fields name and address.
-func main()  {
+func main() {
 	name, address, err := takeInput()
 	if err != nil {
 		os.Exit(1)

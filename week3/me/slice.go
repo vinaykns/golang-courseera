@@ -8,7 +8,7 @@ import (
 	"strconv"
 )
 
-func main () {
+func main() {
 	PrintSlice()
 }
 
@@ -52,7 +52,7 @@ func locateIndexAndAdd(input []int, data string) (result []int) {
 // position in the slice.
 // TODO: Show the illustration what happens if I don't do the pass by
 //  reference in the addDataToSlice function.
-func PrintSlice () {
+func PrintSlice() {
 	scanner := bufio.NewScanner(os.Stdin)
 	data := make([]int, 3)
 	var result *[]int

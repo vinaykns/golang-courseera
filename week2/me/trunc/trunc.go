@@ -17,7 +17,7 @@ func truncateFpNumber() (err error) {
 		return fmt.Errorf("failed to read input from user %v", err)
 	}
 	if floatData, err := strconv.ParseFloat(string(userData), 64); err == nil {
-		intData  := int(floatData)
+		intData := int(floatData)
 		fmt.Printf("The value after truncation is %d \n", intData)
 		return nil
 	} else {
@@ -25,7 +25,7 @@ func truncateFpNumber() (err error) {
 	}
 }
 
-func main()  {
+func main() {
 	err := truncateFpNumber()
 	if err != nil {
 		fmt.Printf("failed with error: %v", err)
